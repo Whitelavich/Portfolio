@@ -13,14 +13,14 @@ export default function StartButton() {
     const [projectsExpanded,setProjectsExpanded] = useState(false)
     const triggerElement  = ()=>{
         return (
-            <Image src={mw} alt={"mw"} width={120} className={"-m-4"}/>
+            <Image src={mw} alt={"mw"} width={140} className={"-m-3 -mb-12"}/>
 
         )
     }
     const buttonClasses = 'shrink bg-cyan-800 p-1 rounded-lg drop-shadow-xl md:text-2xl text-sm m-1 text-start  '
     const subButtonClasses = buttonClasses + 'ml-4 bg-cyan-900'
     return (
-        <div className={"pb-2"}>
+        <div className={"pb-2 h-full w-fit"}>
             <Popup arrow={false} offsetY={-8}  offsetX={18}  trigger={triggerElement} position="top left" contentStyle={{height: '40%', width: '20%', backgroundColor: "transparent", border: '1px solid white',borderRadius: "0 20px 0 0 ", backdropFilter: "blur(5px)"}}>
                 <div className={"text-white grid grid-cols-3 h-[100%]"}>
                     <div className={"col-span-2 grid grid-cols-1 pr-2  "}>

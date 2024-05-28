@@ -51,6 +51,8 @@ export default function Page() {
             <ContextMenu buttons={contextButtons} position={contextPosition}/>
         )}
 
+
+
     return <div className={` pl-4 pt-4  w-full max-h-screen min-h-screen bg-cover bg-center bg-no-repeat ${bg} ${currCursor}` } onContextMenu={handleContext}>
         {/*<div className={" lg:flex lg:pl-4 "}>*/}
         {/*    <p className="lg:text-6xl text-2xl underline text-white lg:pl-40 pl-2 lg:pt-20 text-nowrap ">Hi, I'm Meg!</p>*/}
@@ -60,6 +62,7 @@ export default function Page() {
             <div className={"lg:w-[40%]"}>
                 <SkillHexagons/>
             </div>
+
 
         {contextOpen && (
             contextMenu()
