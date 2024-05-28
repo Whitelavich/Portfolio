@@ -42,8 +42,15 @@ export default function Page() {
     const [contextOpen,setContextOpen] = useState(false)
     const [contextStyles,setContextStyles] = useState({})
 
-    const contextButtons  = [{name: "Set Background", click: ()=>{bg === 'bg-beach-sunset' ? setBg('bg-river-valley') : setBg('bg-beach-sunset')}},
-        {name: "Change Cursor",click: toggleCursorSelect}]
+    const contextButtons  = [
+        {name: "Set Background", click: ()=>{contextHandler( () => bg === 'bg-beach-sunset' ? setBg('bg-river-valley') : setBg('bg-beach-sunset'))}},
+        {name: "Change Cursor",click:()=>{contextHandler(toggleCursorSelect)} }
+    ]
+
+    const contextHandler = (callBack: ()=> void)  =>{
+        setContextOpen(false)
+        callBack();
+    }
 
     const contextMenu = ()=>{
         return(

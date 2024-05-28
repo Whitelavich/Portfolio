@@ -8,6 +8,7 @@ import monstercatCursor from '../../public/art/cursors/monstercat.png'
 import {useWindowStore} from "../utils/WindowStore";
 
 import * as FAicons from 'react-icons/fa'
+import Button from "./inputs/Button";
 export default function CursorSelect(){
     const setCursor = useWindowStore((state) => state.setCursor)
     const buttonClasses = 'shrink bg-cyan-800 p-1 rounded-lg drop-shadow-xl md:text-2xl text-sm m-1 text-start  text-white '
@@ -37,7 +38,7 @@ export default function CursorSelect(){
              
             </div>
 
-            <button className={buttonClasses} onClick={()=>setCursor('')}> Reset </button>
+            <Button  onClick={()=>setCursor('')}> Reset </Button>
 
         </div>
     )
