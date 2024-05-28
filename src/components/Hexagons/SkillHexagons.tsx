@@ -53,6 +53,8 @@ const skills = [
     {image: postgresLogo, name: "Postgre-SQL", classes: "lg:ml-3 p-2", bg: "#155e75", raw: rawPostgresLogo},
 ]
 
+
+
 skills.map((skill)=>{
     // console.log(skill.image)
     const imgComponent = ( <Image id={skill.name} className={`p-1 ${skill.classes}`} src={skill.image} alt={skill.name}/>)
@@ -72,11 +74,11 @@ export default function SkillHexagons() {
 
     const Hexagons = [0, 1, 2, 3, 4, 5,]
     return (
-        <div className={"main"} >
-            <div className={"container"}>
+        <div className={"main flex w-full"}  >
+            <div className={"container text-[0]"}>
                 {skills.map(({image, name, classes,bg}) => {
                     return (
-                        <div key={name} data-tooltip-id={"tooltip"} data-tooltip-content={name} data-tooltip-place={"top"} style={{backgroundColor: bg,}}>
+                        <div key={name} className={"inline-block w-16 md:w-28 lg:w-40 m-1 lg:m-2 "} data-tooltip-id={"tooltip"} data-tooltip-content={name} data-tooltip-place={"top"} style={{backgroundColor: bg,}}>
                             <Image id={name} className={`p-1 ${classes}`} src={image} alt={name}/>
                         </div>)
                 })}

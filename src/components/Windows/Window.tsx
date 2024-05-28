@@ -16,7 +16,7 @@ export default function Window(props: windowProps,){
 
 
     const layout = [{ key: 'test', x: 0, y: 0, width: 200, height: 100, zIndex: 1 }]
-    let defaultSize : CSSProperties  = {height: '40vh', width: '50%', resize: 'both', overflow: "auto"}
+    let defaultSize : CSSProperties  = {height: '60vh', width: '30%', resize: 'both', overflow: "auto"}
     let fullScreen: CSSProperties  = {height: '80vh', width: '90%',resize: 'both',overflow: "auto"}
     const [csize,setSize] = useState(defaultSize)
 

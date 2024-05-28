@@ -1,3 +1,4 @@
+'use client';
 import {useState} from "react";
 
 
@@ -11,6 +12,6 @@ export default function Clock(){
     }
     setInterval(UpdateTime)
     return(
-        <div>{ctime}</div>
+        <p suppressHydrationWarning >{ctime}</p>
     )
 }

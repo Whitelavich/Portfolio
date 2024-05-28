@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       backgroundImage:{
         'river-valley' : "url('/art/riverValley.JPG')",
-        'beach-sunset' : "url('/art/beach-sunset.JPG')"
+        'beach-sunset' : "url('/art/beach-sunset.JPG')",
+        'tranquil-stream': "url('/art/tranquil-stream.JPG')"
       },
       cursor:{
         '3d' : "url('/art/cursors/3d.png'),auto",

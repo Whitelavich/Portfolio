@@ -8,6 +8,7 @@ import {useWindowStore} from "../utils/WindowStore";
 import {useState} from "react";
 import ContextMenu from "../components/ContextMenu";
 import CursorSelect from "../components/CursorSelect";
+import BackgroundSelect from "../components/BackgroundSelect";
 
 
 
@@ -27,6 +28,7 @@ export default function Page() {
     const [contextPosition, setContextPosition] = useState({x: 0,y: 0})
 
     const currCursor = useWindowStore((state) => state.cursor)
+    const currBG = useWindowStore((state) => state.background)
 
 
     const resumeState = useWindowStore((state) => state.resume)
@@ -38,13 +40,16 @@ export default function Page() {
     const cursorSelectState = useWindowStore((state) => state.cursorSelect)
     const toggleCursorSelect = useWindowStore((state) => state.toggleCursorSelect)
 
+    const backgroundSelectState = useWindowStore((state) => state.backgroundSelect)
+    const toggleBackgroundSelect = useWindowStore((state) => state.toggleBackgroundSelect)
+
     const [bg,setBg] = useState('bg-beach-sunset')
     const [contextOpen,setContextOpen] = useState(false)
     const [contextStyles,setContextStyles] = useState({})
 
     const contextButtons  = [
-        {name: "Set Background", click: ()=>{contextHandler( () => bg === 'bg-beach-sunset' ? setBg('bg-river-valley') : setBg('bg-beach-sunset'))}},
-        {name: "Change Cursor",click:()=>{contextHandler(toggleCursorSelect)} }
+        {name: "Change Cursor",click:()=>{contextHandler(toggleCursorSelect)}} ,
+        {name: "Change Background",click:()=>{contextHandler(toggleBackgroundSelect)} }
     ]
 
     const contextHandler = (callBack: ()=> void)  =>{
@@ -60,7 +65,7 @@ export default function Page() {
 
 
 
-    return <div className={` pl-4 pt-4  w-full max-h-screen min-h-screen bg-cover bg-center bg-no-repeat ${bg} ${currCursor}` } onContextMenu={handleContext}>
+    return <div className={` pl-4 pt-4  w-full max-h-screen min-h-screen bg-cover bg-center bg-no-repeat ${currBG} ${currCursor}` } onContextMenu={handleContext}>
         {/*<div className={" lg:flex lg:pl-4 "}>*/}
         {/*    <p className="lg:text-6xl text-2xl underline text-white lg:pl-40 pl-2 lg:pt-20 text-nowrap ">Hi, I'm Meg!</p>*/}
         {/*    <p className={"lg:text-6xl text-lg lg:pt-48 lg:-ml-10 pl-6 pt-2 text-nowrap "}> Full Stack Developer</p>*/}
@@ -78,6 +83,7 @@ export default function Page() {
         <Window isOpen={resumeState} setIsOpen={toggleResume}><IFrame source={"/other/Whitelavich-Resume.pdf"}/></Window>
         <Window isOpen={clickyGameState} setIsOpen={toggleClickyGame}><IFrame source={"http://whitelavich.github.io/Clicky-Game/"}/> </Window>
         <Window isOpen={cursorSelectState} setIsOpen={toggleCursorSelect}><CursorSelect/></Window>
+        <Window isOpen={backgroundSelectState} setIsOpen={toggleBackgroundSelect}><BackgroundSelect/></Window>
 
 
 
