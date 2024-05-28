@@ -4,11 +4,12 @@ interface ContextMenuProps {
 }
 
 export default function ContextMenu(props: ContextMenuProps){
-    //TODO: give this a frosted bg like startmenu when u have tailwind again m.w. 5.21.24
-return (<div id={"context-menu"} className={"flex grid grid-cols-1 absolute "} style={{ top: props.position.y + "px", left: props.position.x + "px"}}>
+    const buttonClasses = 'shrink bg-cyan-800 p-1 rounded-lg drop-shadow-xl md:text-2xl text-sm m-1 text-start text-white  '
+
+    return (<div id={"context-menu"} className={"flex grid grid-cols-1 absolute bg-transparent border-white border-2 backdrop-blur-lg"} style={{ top: props.position.y + "px", left: props.position.x + "px"}}>
     {props.buttons.map((btn) => {
         return(
-            <button key={btn.name} onClick={btn.click}>{btn.name}</button>
+            <button className={buttonClasses} key={btn.name} onClick={btn.click}>{btn.name}</button>
         )
     })}
 
