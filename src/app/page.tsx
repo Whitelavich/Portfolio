@@ -10,6 +10,8 @@ import ContextMenu from "../components/ContextMenu";
 import CursorSelect from "../components/CursorSelect";
 import BackgroundSelect from "../components/BackgroundSelect";
 
+import MusicToy from "../components/MusicToy";
+
 
 
 
@@ -34,6 +36,9 @@ export default function Page() {
     const resumeState = useWindowStore((state) => state.resume)
     const toggleResume = useWindowStore((state) => state.toggleResume)
 
+    const musicToyState = useWindowStore((state) => state.musicToy)
+    const togglemusicToy = useWindowStore((state) => state.toggleMusicToy)
+
     const clickyGameState = useWindowStore((state) => state.clickerGame)
     const toggleClickyGame = useWindowStore((state) => state.toggleClickyGame)
 
@@ -52,6 +57,7 @@ export default function Page() {
         {name: "Change Background",click:()=>{contextHandler(toggleBackgroundSelect)} }
     ]
 
+
     const contextHandler = (callBack: ()=> void)  =>{
         setContextOpen(false)
         callBack();
@@ -65,6 +71,10 @@ export default function Page() {
 
 
 
+
+
+
+
     return <div className={` pl-4 pt-4  w-full max-h-screen min-h-screen bg-cover bg-center bg-no-repeat ${currBG} ${currCursor}` } onContextMenu={handleContext}>
         {/*<div className={" lg:flex lg:pl-4 "}>*/}
         {/*    <p className="lg:text-6xl text-2xl underline text-white lg:pl-40 pl-2 lg:pt-20 text-nowrap ">Hi, I'm Meg!</p>*/}
@@ -74,6 +84,7 @@ export default function Page() {
             <div className={"lg:w-[40%]"}>
                 <SkillHexagons/>
             </div>
+        {/*<MusicToy/>*/}
 
 
         {contextOpen && (
@@ -84,6 +95,7 @@ export default function Page() {
         <Window isOpen={clickyGameState} setIsOpen={toggleClickyGame}><IFrame source={"http://whitelavich.github.io/Clicky-Game/"}/> </Window>
         <Window isOpen={cursorSelectState} setIsOpen={toggleCursorSelect}><CursorSelect/></Window>
         <Window isOpen={backgroundSelectState} setIsOpen={toggleBackgroundSelect}><BackgroundSelect/></Window>
+        <Window isOpen={musicToyState} setIsOpen={togglemusicToy}><MusicToy/></Window>
 
 
 

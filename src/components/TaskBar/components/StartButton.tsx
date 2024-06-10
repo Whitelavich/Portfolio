@@ -11,6 +11,7 @@ import Button from "../../inputs/Button";
 export default function  StartButton() {
     const toggleResume = useWindowStore((state) => state.toggleResume)
     const toggleClickyGame = useWindowStore((state) => state.toggleClickyGame)
+    const toggleMusicToy = useWindowStore((state) => state.toggleMusicToy)
     const [projectsExpanded,setProjectsExpanded] = useState(false)
     const triggerElement  = ()=>{
         return (
@@ -29,7 +30,11 @@ export default function  StartButton() {
                         <Button  onClick={()=>{setProjectsExpanded(!projectsExpanded)}}> Projects</Button>
 
                         {projectsExpanded && (
+                            <div>
                                 <Button nested onClick={()=>{toggleClickyGame()}}>Clicky Game</Button>
+                                <Button nested onClick={()=>{toggleMusicToy()}}>Music Toy</Button>
+                            </div>
+
                         )}
                     </div>
                     <div className={"col-span-1 text-center"}>

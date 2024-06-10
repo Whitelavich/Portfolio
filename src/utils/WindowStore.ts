@@ -5,7 +5,9 @@ interface WindowStore {
     resume: boolean
     toggleResume: () => void,
     clickerGame: boolean,
-    toggleClickyGame: ()=>void
+    toggleClickyGame: ()=>void,
+    musicToy: boolean,
+    toggleMusicToy: ()=> void,
     cursorSelect: boolean,
     toggleCursorSelect: () => void
     backgroundSelect: boolean
@@ -44,5 +46,10 @@ export const useWindowStore = create<WindowStore>((set,get) => ({
     background: 'bg-beach-sunset',
     setBackground: (bgClass)=>set((state)=>({
         background: bgClass
-    }))
+    })),
+    musicToy: false,
+    toggleMusicToy: () =>{return set((state) => ({
+
+        musicToy: !state?.musicToy ?? false
+    }))},
 }))
