@@ -95,7 +95,11 @@ export default function Page() {
         <Window isOpen={clickyGameState} setIsOpen={toggleClickyGame}><IFrame source={"http://whitelavich.github.io/Clicky-Game/"}/> </Window>
         <Window isOpen={cursorSelectState} setIsOpen={toggleCursorSelect}><CursorSelect/></Window>
         <Window isOpen={backgroundSelectState} setIsOpen={toggleBackgroundSelect}><BackgroundSelect/></Window>
-        <Window isOpen={musicToyState} setIsOpen={togglemusicToy}><MusicToy/></Window>
+        {musicToyState && (
+
+            <Window isOpen={musicToyState} setIsOpen={togglemusicToy}><MusicToy/></Window>
+        )}
+
 
 
 

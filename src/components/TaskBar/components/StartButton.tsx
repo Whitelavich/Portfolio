@@ -38,7 +38,7 @@ export default function  StartButton() {
                         )}
                     </div>
                     <div className={"col-span-1 text-center"}>
-                        <Image className={"border-2 "} style={{borderRadius: "0 20px 0 0 "}} src={me} alt={"An Image of me"}></Image>
+                        {/*<Image className={"border-2 "} style={{borderRadius: "0 20px 0 0 "}} src={me} alt={"An Image of me"}></Image>*/}
                         <p>Megan Whitelavich</p>
                         <p>Full Stack Developer</p>
                 </div>
